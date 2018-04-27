@@ -1,0 +1,19 @@
+{
+  "name": "exspencer",
+  "version": "0.0.0",
+  "description": "Budgeting and Income Projections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Pachomski",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.6.0"
+  }
+}
