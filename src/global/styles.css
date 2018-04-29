@@ -1,0 +1,25 @@
+body {
+  background-color: #eee;
+}
+
+/* Flex */
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-row > * {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+/* Layout */
+.layout--container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 10px 25px;
+}
+
+.opaque {
+  opacity: 0.4;
+}

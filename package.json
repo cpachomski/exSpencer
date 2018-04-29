@@ -4,13 +4,15 @@
   "description": "Budgeting and Income Projections",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "start": "NODE_ENV=development webpack-dev-server --mode development --open --no-inline",
+    "build": "NODE_ENV=production webpack --mode production"
   },
   "author": "Chris Pachomski",
   "license": "ISC",
   "dependencies": {
+    "calendar": "^0.1.0",
     "classnames": "^2.2.5",
+    "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
@@ -18,6 +20,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
