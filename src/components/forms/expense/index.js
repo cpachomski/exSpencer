@@ -12,7 +12,9 @@ class ExpenseForm extends Component {
     this.state = {
       expenseTitle: '',
       expenseDate: this.props.expenseDate,
-      expenseRecurring: false
+      expenseFrequency: '',
+      expenseRecurring: false,
+      expenses: []
     }
   }
 
@@ -33,6 +35,25 @@ class ExpenseForm extends Component {
       [name]: value
     })
   }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.setState(
+      ({
+        expenses,
+        expenseTitle,
+        expenseDate,
+        expenseRecurring,
+        expenseFrequency
+      }) => ({
+        expenses: [
+          ...expenses,
+          { expenseTitle, expenseDate, expenseRecurring, expenseFrequency }
+        ]
+      })
+    )
+  }
+
   componentDidUpdate(prevProps, prevState) {
     console.log('[prevState]', prevState)
     console.log('[nextState]', this.state)
@@ -41,7 +62,7 @@ class ExpenseForm extends Component {
   render() {
     return (
       <div className="expense-form--container">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <p>
             <label htmlFor="expenseTitle" value="Title" />
             <input
@@ -80,7 +101,7 @@ class ExpenseForm extends Component {
               <label htmlFor="expenseFrequency" value="Frequency">
                 Frequency
               </label>
-              <select type="select">
+              <select type="select" onChange={this.handleInputChange}>
                 {frequencies.map(({ value }) => (
                   <option key={value} value={value}>
                     {value}
@@ -89,6 +110,7 @@ class ExpenseForm extends Component {
               </select>
             </p>
           )}
+          <input type="submit" value="Add" />
         </form>
       </div>
     )
