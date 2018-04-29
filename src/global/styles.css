@@ -2,6 +2,10 @@ body {
   background-color: #eee;
 }
 
+select {
+  text-transform: capitalize;
+}
+
 /* Flex */
 .flex-row {
   display: flex;

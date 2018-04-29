@@ -2,7 +2,7 @@ import React from 'react'
 import c from 'calendar'
 import cx from 'classnames'
 import './styles.css'
-import { weekdays, months } from '../../../constants/date'
+import { weekdays, months } from '../../../config/date'
 
 const cal = new c.Calendar()
 
